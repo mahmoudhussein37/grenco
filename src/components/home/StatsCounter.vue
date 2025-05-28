@@ -1,48 +1,72 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { ref, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const stats = ref([
-  { label: t('stats.machines'), value: 0, target: 150, icon: 'pi-cog', suffix: '+' },
-  { label: t('stats.plasticType'), value: 0, target: 12, icon: 'pi-filter', suffix: '' },
-  { label: t('stats.customers'), value: 0, target: 75, icon: 'pi-users', suffix: '+' },
-  { label: t('stats.countries'), value: 0, target: 10, icon: 'pi-globe', suffix: '' }
-])
+  {
+    label: t("stats.machines"),
+    value: 0,
+    target: 150,
+    icon: "pi-cog",
+    suffix: "+",
+  },
+  {
+    label: t("stats.plasticType"),
+    value: 0,
+    target: 12,
+    icon: "pi-filter",
+    suffix: "",
+  },
+  {
+    label: t("stats.customers"),
+    value: 0,
+    target: 75,
+    icon: "pi-users",
+    suffix: "+",
+  },
+  {
+    label: t("stats.countries"),
+    value: 0,
+    target: 10,
+    icon: "pi-globe",
+    suffix: "",
+  },
+]);
 
 const startCounting = () => {
   stats.value.forEach((stat) => {
-    let startValue = 0
-    const duration = 2000
-    const steps = 60
-    const increment = stat.target / steps
-    const stepTime = duration / steps
-    
+    let startValue = 0;
+    const duration = 2000;
+    const steps = 60;
+    const increment = stat.target / steps;
+    const stepTime = duration / steps;
+
     const counter = setInterval(() => {
-      startValue += increment
+      startValue += increment;
       if (startValue >= stat.target) {
-        stat.value = stat.target
-        clearInterval(counter)
+        stat.value = stat.target;
+        clearInterval(counter);
       } else {
-        stat.value = Math.floor(startValue)
+        stat.value = Math.floor(startValue);
       }
-    }, stepTime)
-  })
-}
+    }, stepTime);
+  });
+};
 
 // In a production app, we'd use Intersection Observer for this
 onMounted(() => {
-  setTimeout(startCounting, 500)
-})
+  setTimeout(startCounting, 500);
+});
 </script>
 
 <template>
   <section class="stats-section">
     <div class="container">
       <div class="stats-grid" data-aos="fade-up">
-        <div 
-          v-for="(stat, index) in stats" 
+        <div
+          v-for="(stat, index) in stats"
           :key="index"
           class="stat-item"
           :data-aos-delay="index * 100"
@@ -51,7 +75,8 @@ onMounted(() => {
             <i :class="`pi ${stat.icon}`"></i>
           </div>
           <div class="stat-value">
-            <span class="counter">{{ stat.value }}</span><span class="suffix">{{ stat.suffix }}</span>
+            <span class="counter">{{ stat.value }}</span
+            ><span class="suffix">{{ stat.suffix }}</span>
           </div>
           <div class="stat-label">{{ stat.label }}</div>
         </div>
@@ -70,13 +95,13 @@ onMounted(() => {
 }
 
 .stats-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg');
+  background-image: url("https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg");
   background-size: cover;
   background-position: center;
   opacity: 0.1;

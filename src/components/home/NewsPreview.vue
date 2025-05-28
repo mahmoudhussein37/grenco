@@ -1,45 +1,51 @@
 <script setup lang="ts">
-import { onMounted, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vue-router'
-import { useNewsStore } from '../../stores/news'
+import { onMounted, watch } from "vue";
+import { useI18n } from "vue-i18n";
+import { useRouter } from "vue-router";
+import { useNewsStore } from "../../stores/news";
 
-const { t, locale } = useI18n()
-const router = useRouter()
-const newsStore = useNewsStore()
+const { t, locale } = useI18n();
+const router = useRouter();
+const newsStore = useNewsStore();
 
 const formatDate = (dateString: string) => {
-  const date = new Date(dateString)
-  return new Intl.DateTimeFormat(locale.value === 'ar' ? 'ar-EG' : 'en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  }).format(date)
-}
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat(locale.value === "ar" ? "ar-EG" : "en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }).format(date);
+};
 
 const viewAllNews = () => {
-  router.push({ name: 'news' })
-}
+  router.push({ name: "news" });
+};
 
 // Fetch news when component mounts
 onMounted(() => {
-  newsStore.fetchNews(locale.value === 'ar' ? 'ar' : 'en-US')
-})
+  newsStore.fetchNews(locale.value === "ar" ? "ar" : "en-US");
+});
 
-watch(() => locale.value, (newLocale) => {
-  newsStore.fetchNews(newLocale === 'ar' ? 'ar' : 'en-US')
-})
-
+watch(
+  () => locale.value,
+  (newLocale) => {
+    newsStore.fetchNews(newLocale === "ar" ? "ar" : "en-US");
+  }
+);
 </script>
 
 <template>
   <section class="section news-section">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">{{ t('news.title') }}</h2>
-      <p class="section-subtitle text-center mb-5" data-aos="fade-up" data-aos-delay="100">
-        {{ t('news.subtitle') }}
+      <h2 class="section-title" data-aos="fade-up">{{ t("news.title") }}</h2>
+      <p
+        class="section-subtitle text-center mb-5"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        {{ t("news.subtitle") }}
       </p>
-      
+
       <!-- Loading State -->
       <div v-if="newsStore.loading" class="loading-state">
         <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
@@ -48,17 +54,20 @@ watch(() => locale.value, (newLocale) => {
 
       <!-- Error State -->
       <div v-else-if="newsStore.error" class="error-state">
-        <i class="pi pi-exclamation-triangle" style="font-size: 2rem; color: var(--color-error)"></i>
+        <i
+          class="pi pi-exclamation-triangle"
+          style="font-size: 2rem; color: var(--color-error)"
+        ></i>
         <p>{{ newsStore.error }}</p>
         <button @click="() => newsStore.fetchNews()" class="btn btn-primary">
           Try Again
         </button>
       </div>
-      
+
       <!-- News Grid -->
       <div v-else class="news-grid">
-        <div 
-          v-for="article in newsStore.news.slice(0, 3)" 
+        <div
+          v-for="article in newsStore.news.slice(0, 3)"
           :key="article.id"
           class="news-card"
           data-aos="fade-up"
@@ -71,20 +80,25 @@ watch(() => locale.value, (newLocale) => {
             <div class="news-date">{{ formatDate(article.date) }}</div>
             <h3 class="news-title">{{ article.title }}</h3>
             <p class="news-excerpt">{{ article.excerpt }}</p>
-            <a href="#" class="news-link">{{ t('news.readMore') }}</a>
+            <a href="#" class="news-link">{{ t("news.readMore") }}</a>
           </div>
         </div>
       </div>
 
       <!-- Empty State -->
-      <div v-if="!newsStore.loading && !newsStore.error && newsStore.news.length === 0" class="empty-state">
+      <div
+        v-if="
+          !newsStore.loading && !newsStore.error && newsStore.news.length === 0
+        "
+        class="empty-state"
+      >
         <i class="pi pi-inbox" style="font-size: 2rem"></i>
         <p>No news articles available at the moment.</p>
       </div>
-      
+
       <div class="text-center mt-5" data-aos="fade-up">
         <button @click="viewAllNews" class="btn btn-primary">
-          {{ t('news.allNews') }}
+          {{ t("news.allNews") }}
           <i class="pi pi-arrow-right"></i>
         </button>
       </div>
@@ -116,13 +130,14 @@ watch(() => locale.value, (newLocale) => {
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-normal) ease,
+    box-shadow var(--transition-normal) ease;
 }
 
 .news-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
 
 .news-image {

@@ -25,10 +25,9 @@ export const useNewsStore = defineStore('news', () => {
     loading.value = true
     error.value = null
   
-    try {
-      const response = await contentful.getEntries({
+    try {      const response = await contentful.getEntries({
         content_type: 'news',
-        order: '-fields.date',
+        order: ['-fields.date'] as any,
         locale: currentLocale
       })
       

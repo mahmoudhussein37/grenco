@@ -8,7 +8,7 @@ const newsStore = useNewsStore();
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
-  return new Intl.DateTimeFormat(locale.value === 'ar' ? 'ar-EG' : 'en-US', {
+  return new Intl.DateTimeFormat(locale.value === "ar" ? "ar-EG" : "en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -16,13 +16,15 @@ const formatDate = (dateString: string) => {
 };
 
 onMounted(() => {
-  newsStore.fetchNews(locale.value === 'ar' ? 'ar' : 'en-US')
-})
+  newsStore.fetchNews(locale.value === "ar" ? "ar" : "en-US");
+});
 
-watch(() => locale.value, (newLocale) => {
-  newsStore.fetchNews(newLocale === 'ar' ? 'ar' : 'en-US')
-})
-
+watch(
+  () => locale.value,
+  (newLocale) => {
+    newsStore.fetchNews(newLocale === "ar" ? "ar" : "en-US");
+  }
+);
 </script>
 
 <template>
@@ -83,7 +85,11 @@ watch(() => locale.value, (newLocale) => {
 
         <!-- Empty State -->
         <div
-          v-if="!newsStore.loading && !newsStore.error && newsStore.news.length === 0"
+          v-if="
+            !newsStore.loading &&
+            !newsStore.error &&
+            newsStore.news.length === 0
+          "
           class="empty-state"
         >
           <i class="pi pi-inbox" style="font-size: 2rem"></i>

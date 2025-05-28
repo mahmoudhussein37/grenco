@@ -15,14 +15,17 @@ A modern, responsive website for Grenco built with Vue 3, TypeScript, and Vite.
 
 1. Clone the repository
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Set up environment variables:
+
    ```bash
    cp .env.example .env.local
    ```
+
    Fill in your Contentful credentials in `.env.local`
 
 4. Start the development server:
@@ -38,12 +41,15 @@ A modern, responsive website for Grenco built with Vue 3, TypeScript, and Vite.
 ## Deployment to GitHub Pages
 
 ### Quick Deployment
+
 Use the provided deployment script:
+
 ```powershell
 .\deploy.ps1 your-repository-name
 ```
 
 ### Manual Deployment
+
 See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed step-by-step instructions.
 
 ## Building for Production
@@ -68,6 +74,7 @@ npm run build
 ## Security
 
 This project follows security best practices:
+
 - ✅ Environment variables for sensitive data
 - ✅ Credentials excluded from version control
 - ✅ Secure GitHub Actions deployment

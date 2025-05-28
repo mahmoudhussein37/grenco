@@ -1,52 +1,53 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 const features = ref([
   {
-    icon: 'pi-bolt',
-    title: 'Energy Efficient',
-    description: 'Reduce power consumption with smart energy management systems',
-    color: '#00c853'
+    icon: "pi-bolt",
+    title: "Energy Efficient",
+    description:
+      "Reduce power consumption with smart energy management systems",
+    color: "#00c853",
   },
   {
-    icon: 'pi-cog',
-    title: 'Customizable',
-    description: 'Configure machines to match your specific requirements',
-    color: '#1e88e5'
+    icon: "pi-cog",
+    title: "Customizable",
+    description: "Configure machines to match your specific requirements",
+    color: "#1e88e5",
   },
   {
-    icon: 'pi-mobile',
-    title: 'Smart Controls',
-    description: 'Monitor and control operations remotely via mobile app',
-    color: '#7b1fa2'
+    icon: "pi-mobile",
+    title: "Smart Controls",
+    description: "Monitor and control operations remotely via mobile app",
+    color: "#7b1fa2",
   },
   {
-    icon: 'pi-chart-line',
-    title: 'Data Analytics',
-    description: 'Track performance, yield, and maintenance needs in real-time',
-    color: '#ff6d00'
+    icon: "pi-chart-line",
+    title: "Data Analytics",
+    description: "Track performance, yield, and maintenance needs in real-time",
+    color: "#ff6d00",
   },
   {
-    icon: 'pi-filter',
-    title: 'Multi-material',
-    description: 'Process various plastic types with adaptable settings',
-    color: '#2962ff'
+    icon: "pi-filter",
+    title: "Multi-material",
+    description: "Process various plastic types with adaptable settings",
+    color: "#2962ff",
   },
   {
-    icon: 'pi-check-circle',
-    title: 'Quality Assurance',
-    description: 'Ensure consistent output quality with integrated testing',
-    color: '#00bcd4'
-  }
-])
+    icon: "pi-check-circle",
+    title: "Quality Assurance",
+    description: "Ensure consistent output quality with integrated testing",
+    color: "#00bcd4",
+  },
+]);
 </script>
 
 <template>
   <section class="section features-section">
     <div class="container">
       <div class="features-grid">
-        <div 
-          v-for="(feature, index) in features" 
+        <div
+          v-for="(feature, index) in features"
           :key="index"
           class="feature-card"
           data-aos="zoom-in"
@@ -72,13 +73,13 @@ const features = ref([
 }
 
 .features-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg');
+  background-image: url("https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg");
   background-size: cover;
   background-position: center;
   opacity: 0.05;
@@ -95,7 +96,7 @@ const features = ref([
   background-color: var(--color-white);
   padding: var(--space-4);
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform var(--transition-normal) ease;
   text-align: center;
 }

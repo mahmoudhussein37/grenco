@@ -5,6 +5,7 @@
 ### Method 1: Using the Setup Script (Recommended)
 
 1. **Run the setup script with your GitHub details:**
+
    ```powershell
    .\setup-github.ps1 -GitHubUsername "YOUR_GITHUB_USERNAME" -RepositoryName "grenco-website"
    ```
@@ -17,6 +18,7 @@
 ### Method 2: Manual Step-by-Step
 
 #### Step 1: Create Repository on GitHub
+
 1. Go to [https://github.com/new](https://github.com/new)
 2. Repository name: `grenco-website` (or your preferred name)
 3. Make it **Public** (required for free GitHub Pages)
@@ -24,6 +26,7 @@
 5. Click "Create repository"
 
 #### Step 2: Connect Your Local Repository
+
 ```powershell
 # Replace YOUR_USERNAME with your actual GitHub username
 git remote add origin https://github.com/YOUR_USERNAME/grenco-website.git
@@ -43,16 +46,19 @@ git push -u origin main
 ```
 
 #### Step 3: Set Up GitHub Secrets
+
 1. Go to your repository → Settings → Secrets and variables → Actions
 2. Click "New repository secret"
 3. Add these secrets:
+
    - **Name:** `VITE_CONTENTFUL_SPACE_ID`
    - **Value:** `g8e8ffg6jo04`
-   
+
    - **Name:** `VITE_CONTENTFUL_ACCESS_TOKEN`
    - **Value:** `YBepEoTgpTm0KSlSF9QCN1ub0_G-qTB04NlJktUJuVE`
 
 #### Step 4: Enable GitHub Pages
+
 1. Go to your repository → Settings → Pages
 2. Under "Source", select **"GitHub Actions"**
 3. Save the settings
@@ -71,16 +77,19 @@ Your website will be automatically deployed to:
 ## 🔧 Troubleshooting
 
 ### Build Fails
+
 - Check the Actions tab for error details
 - Ensure all GitHub Secrets are set correctly
 - Verify repository name matches vite.config.ts
 
 ### Site Not Loading
+
 - Wait 5-10 minutes for GitHub Pages to propagate
 - Check that GitHub Pages source is set to "GitHub Actions"
 - Verify the site URL format: `https://username.github.io/repository-name/`
 
 ### Authentication Issues
+
 - Make sure your repository is public
 - Check if you need to configure Git credentials:
   ```powershell
@@ -91,6 +100,7 @@ Your website will be automatically deployed to:
 ## 🔄 Future Updates
 
 To update your live website:
+
 1. Make changes to your code
 2. Commit and push to main branch:
    ```powershell
