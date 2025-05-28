@@ -11,7 +11,7 @@ A modern, responsive website for Grenco built with Vue 3, TypeScript, and Vite.
 - 🎯 SEO optimized
 - 🔄 Content management with Contentful CMS
 
-## Setup
+## Quick Start
 
 1. Clone the repository
 2. Install dependencies:
@@ -30,23 +30,27 @@ A modern, responsive website for Grenco built with Vue 3, TypeScript, and Vite.
    npm run dev
    ```
 
+## 📚 Documentation
+
+- **[Deployment Guide](DEPLOYMENT.md)** - Complete guide for deploying to GitHub Pages
+- **[Security Guidelines](SECURITY.md)** - Security best practices and checklist
+
+## Deployment to GitHub Pages
+
+### Quick Deployment
+Use the provided deployment script:
+```powershell
+.\deploy.ps1 your-repository-name
+```
+
+### Manual Deployment
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed step-by-step instructions.
+
 ## Building for Production
 
 ```bash
 npm run build
 ```
-
-## Deployment to GitHub Pages
-
-1. Make sure your repository name matches the `base` setting in `vite.config.ts`
-2. Install gh-pages globally (if not already installed):
-   ```bash
-   npm install -g gh-pages
-   ```
-3. Deploy:
-   ```bash
-   npm run deploy
-   ```
 
 ## Environment Variables
 
@@ -63,6 +67,22 @@ npm run build
 
 ## Security
 
-- Environment variables are used for sensitive data
-- Contentful credentials are not committed to the repository
-- Build artifacts and sensitive files are excluded via .gitignore
+This project follows security best practices:
+- ✅ Environment variables for sensitive data
+- ✅ Credentials excluded from version control
+- ✅ Secure GitHub Actions deployment
+- ✅ Regular dependency updates
+
+See [SECURITY.md](SECURITY.md) for complete security guidelines.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
