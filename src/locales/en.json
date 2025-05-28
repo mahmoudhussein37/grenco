@@ -1,0 +1,106 @@
+{
+  "lang": "English",
+  "dir": "ltr",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "solutions": "Solutions",
+    "news": "News",
+    "contact": "Contact",
+    "menu": "Menu",
+    "switchLanguage": "Switch to Arabic"
+  },
+  "hero": {
+    "title": "Smart Recycling for a Smarter Future",
+    "subtitle": "Innovative plastic recycling machines for sustainable manufacturing",
+    "cta": "Explore Products",
+    "contactUs": "Contact Us"
+  },
+  "about": {
+    "title": "About Grenco",
+    "intro": "Grenco manufactures innovative smart plastic recycling machines designed for small and medium-sized enterprises.",
+    "mission": {
+      "title": "Our Mission",
+      "content": "To empower businesses with sustainable recycling solutions that reduce costs and environmental impact."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "content": "To lead the transition to a circular economy through smart recycling technology."
+    },
+    "values": {
+      "title": "Our Values",
+      "sustainability": "Sustainability",
+      "innovation": "Innovation",
+      "quality": "Quality",
+      "integrity": "Integrity"
+    }
+  },
+  "products": {
+    "title": "Our Recycling Machines",
+    "subtitle": "Efficient, customizable solutions for various plastic types",
+    "featureTitle": "Smart Features",
+    "requestQuote": "Request a Quote",
+    "learnMore": "Learn More",
+    "specs": "Specifications",
+    "plasticTypes": "Supported Plastic Types",
+    "customization": "Customization Options"
+  },
+  "solutions": {
+    "title": "Recycling Solutions",
+    "subtitle": "How Grenco helps businesses save costs and reduce waste",
+    "costSaving": {
+      "title": "Cost Savings",
+      "content": "Reduce production costs by recycling plastic waste directly into your manufacturing process."
+    },
+    "environmental": {
+      "title": "Environmental Impact",
+      "content": "Minimize waste and CO2 emissions with efficient recycling technology."
+    },
+    "comparison": {
+      "title": "Smart vs Traditional",
+      "content": "Compare the benefits of smart recycling against traditional methods."
+    }
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Success stories from businesses using Grenco machines"
+  },
+  "stats": {
+    "machines": "Machines Deployed",
+    "plasticType": "Plastic Types",
+    "customers": "Happy Customers",
+    "countries": "Countries"
+  },
+  "news": {
+    "title": "News & Media",
+    "subtitle": "Latest updates, blog posts, and events",
+    "readMore": "Read More",
+    "allNews": "View All News"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team for inquiries or quotes",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Send Message",
+    "success": "Your message has been sent! We'll respond soon.",
+    "error": "There was an error. Please try again.",
+    "office": "Our Office",
+    "followUs": "Follow Us"
+  },
+  "footer": {
+    "description": "Grenco provides smart plastic recycling solutions for businesses seeking to reduce costs and environmental impact.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "contactUs": "Contact Info",
+    "address": "Beni-Suef, Egypt",
+    "faq": "FAQ",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All Rights Reserved."
+  }
+}
