@@ -25,7 +25,7 @@ Write-Host "   - Value: YBepEoTgpTm0KSlSF9QCN1ub0_G-qTB04NlJktUJuVE" -Foreground
 Write-Host ""
 
 Write-Host "Step 3: Trigger Deployment" -ForegroundColor Yellow
-Write-Host "After completing steps 1 & 2, run:" -ForegroundColor White
+Write-Host "After completing steps 1 and 2, run:" -ForegroundColor White
 Write-Host "   git commit -am 'Secure contentful token'" -ForegroundColor Cyan
 Write-Host "   git push" -ForegroundColor Cyan
 Write-Host ""
