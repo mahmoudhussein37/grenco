@@ -16,7 +16,7 @@ const solutions = ref([
       "Quick return on investment",
       "Minimize production downtime",
     ],
-    image: "/src/assets/images/products/machine3.jpeg",
+    image: "assets/images/products/machine3.jpeg",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const solutions = ref([
       "Reduced energy consumption",
       "Advanced sorting capabilities",
     ],
-    image: "/src/assets/images/products/machine2.jpeg",
+    image: "assets/images/products/machine2.jpeg",
   },
 ]);
 

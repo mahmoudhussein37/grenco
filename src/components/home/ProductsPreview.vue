@@ -6,12 +6,12 @@ import { useRouter } from "vue-router";
 const { t } = useI18n();
 const router = useRouter();
 
-// Sample products data
+// Sample products data  
 const products = ref([
   {
     id: 1,
     name: "EcoGrind S100",
-    image: "/src/assets/images/products/machine1.jpeg",
+    image: "assets/images/products/machine1.jpeg",
     description:
       "Compact plastic grinding machine optimized for small workshops",
     plasticTypes: ["PET", "HDPE", "LDPE"],
@@ -24,7 +24,7 @@ const products = ref([
   {
     id: 2,
     name: "RecycleMaster R200",
-    image: "/src/assets/images/products/machine2.jpeg",
+    image: "assets/images/products/machine2.jpeg",
     description: "Medium capacity recycling solution for diverse plastic types",
     plasticTypes: ["PET", "HDPE", "LDPE", "PP", "PS"],
     features: [
@@ -36,7 +36,7 @@ const products = ref([
   {
     id: 3,
     name: "InduStrong I500",
-    image: "/src/assets/images/products/machine3.jpeg",
+    image: "assets/images/products/machine3.jpeg",
     description:
       "Heavy-duty industrial recycling system for high-volume operations",
     plasticTypes: ["All major plastic types"],

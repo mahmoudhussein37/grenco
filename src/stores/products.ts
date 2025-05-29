@@ -37,11 +37,11 @@ export const useProductsStore = defineStore('products', () => {
         'Automatic shutdown when idle',
         'Small footprint design'
       ],
-      image: '/src/assets/images/products/machine1.jpeg',
+      image: 'assets/images/products/machine1.jpeg',
       gallery: [
-        '/src/assets/images/products/machine1.jpeg',
+        'assets/images/products/machine1.jpeg',
         'https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg',
-        '/src/assets/images/products/machine2.jpeg'
+        'assets/images/products/machine2.jpeg'
       ]
     },
     {
@@ -65,11 +65,11 @@ export const useProductsStore = defineStore('products', () => {
         'One-touch operation',
         'Predictive maintenance alerts'
       ],
-      image: '/src/assets/images/products/machine2.jpeg',
+      image: 'assets/images/products/machine2.jpeg',
       gallery: [
-        '/src/assets/images/products/machine2.jpeg',
-        '/src/assets/images/products/machine1.jpeg',
-        '/src/assets/images/products/machine3.jpeg'
+        'assets/images/products/machine2.jpeg',
+        'assets/images/products/machine1.jpeg',
+        'assets/images/products/machine3.jpeg'
       ]
     },
     {
@@ -94,11 +94,11 @@ export const useProductsStore = defineStore('products', () => {
         'Cloud-based monitoring and control',
         'Integration with factory systems'
       ],
-      image: '/src/assets/images/products/machine3.jpeg',
+      image: 'assets/images/products/machine3.jpeg',
       gallery: [
-        '/src/assets/images/products/machine3.jpeg',
-        '/src/assets/images/products/machine2.jpeg',
-        '/src/assets/images/products/machine1.jpeg'
+        'assets/images/products/machine3.jpeg',
+        'assets/images/products/machine2.jpeg',
+        'assets/images/products/machine1.jpeg'
       ]
     }
   ])

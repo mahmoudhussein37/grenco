@@ -20,23 +20,16 @@ export const useNewsStore = defineStore('news', () => {
   const news = ref<NewsEntry[]>([])
   const loading = ref(false)
   const error = ref<string | null>(null)
+
   const fetchNews = async (currentLocale = 'en-US') => {
     loading.value = true
     error.value = null
   
     try {
-      console.log('🔄 Fetching news from Contentful...')
-      console.log('Locale:', currentLocale)
-      
       const response = await contentful.getEntries({
         content_type: 'news',
         order: ['-fields.date'] as any,
         locale: currentLocale
-      })
-      
-      console.log('✅ Contentful response:', {
-        total: response.total,
-        items: response.items.length
       })
       
       news.value = response.items.map((item: any) => ({
@@ -53,18 +46,9 @@ export const useNewsStore = defineStore('news', () => {
         },
         category: item.fields.category
       }))
-      
-      console.log('✅ News processed:', news.value.length, 'articles')
     } catch (err: any) {
-      console.error('❌ Error fetching news:', err)
-      console.error('Error details:', {
-        message: err.message,
-        status: err.status,
-        statusText: err.statusText,
-        details: err.details
-      })
-      
-      error.value = `Failed to fetch news: ${err.message || 'Unknown error'}. Please check console for details.`
+      error.value = `Failed to fetch news: ${err.message || 'Unknown error'}`
+      console.error('Error fetching news:', err)
     } finally {
       loading.value = false
     }
